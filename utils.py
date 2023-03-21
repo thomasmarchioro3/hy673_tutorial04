@@ -110,7 +110,7 @@ class NICE(nn.Module):
       z, log_det_jacobian = self.scaling_layer(z)
       log_likelihood = torch.sum(self.prior.log_prob(z), dim=1) + log_det_jacobian
     else:
-      log_likelihood = torch.sum(self.prior.log_prob(z), dim=1) + log_det_jacobian
+      log_likelihood = torch.sum(self.prior.log_prob(z), dim=1)
         
 
     return z, log_likelihood
